@@ -1,29 +1,29 @@
 package com.sda.java18.builder;
 
 class CarBuilderImpl implements CarBuilder {
-    private Car carTmp;
+
+    private String color;
+    private int wheels;
 
     public CarBuilderImpl() {
-        carTmp = new Car();
+
     }
 
     @Override
     public Car build() {
-        Car car = new Car();
-        car.setColor(carTmp.getColor());
-        car.setWheels(carTmp.getWheels());
+        Car car = new Car(wheels, color);
         return car;
     }
 
     @Override
     public CarBuilder setColor(final String color) {
-        carTmp.setColor(color);
+        this.color = color;
         return this;
     }
 
     @Override
     public CarBuilder setWheels(final int wheels) {
-        carTmp.setWheels(wheels);
+        this.wheels = wheels;
         return this;
     }
 }
