@@ -8,6 +8,11 @@ public class CarBuildDirector {
     }
 
     public Car construct() {
+
+        CarBuilder carBuilder = builder.setWheels(4);
+        carBuilder = carBuilder.setColor("Red");
+        Car car = carBuilder.build();
+
         return builder.setWheels(4)
                 .setColor("Red")
                 .build();
